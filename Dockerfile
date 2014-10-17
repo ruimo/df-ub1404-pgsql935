@@ -26,6 +26,9 @@ VOLUME ["/var/pgsql"]
 EXPOSE 5432
 
 ADD profile /profile
+ADD initdb.sh /initdb.sh
+
+RUN chmod +x /initdb.sh
 
 CMD ["/usr/bin/monit", "-I", "-c", "/etc/monit/monitrc"]
 
