@@ -35,4 +35,3 @@ EXPOSE 5432
 ADD profile /profile
 
 CMD ["/usr/bin/monit", "-I", "-c", "/etc/monit/monitrc"]
-
