@@ -20,6 +20,8 @@ RUN useradd --shell /bin/false -d /var/home postgres
 # Define mountable directories.
 RUN mkdir -p /var/pgsql/data
 RUN chown -R postgres:postgres /var/pgsql
+RUN locale-gen ja_JP.UTF-8
+RUN /usr/sbin/update-locale LANG=ja_JP.UTF-8
 
 VOLUME ["/var/pgsql"]
 EXPOSE 5432
